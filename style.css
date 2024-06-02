@@ -3,27 +3,36 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 header {
     background: #333;
     color: #fff;
     padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 header nav ul li {
-    display: inline;
     margin-right: 10px;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px;
+    display: block;
 }
 
 .hero {
@@ -61,10 +70,12 @@ footer {
 footer ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
 footer ul li {
-    display: inline;
     margin-right: 10px;
 }
 
@@ -156,4 +167,32 @@ form button {
 
 form button:hover {
     background-color: #e65c00;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-bottom: 10px;
+    }
 }
